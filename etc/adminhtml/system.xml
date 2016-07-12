@@ -7,15 +7,15 @@
         <section id='df_payment'>
             <!--
                 2015-09-25
-                1-я и 2-я цифры sortOrder соответствуют порядковому номеру первой буквы модуля
-                в английском алфавите: https://en.wikipedia.org/wiki/English_alphabet
-				3-я и 4-я цифры sortOrder соответствуют порядковому номеру второй буквы модуля
-                в английском алфавите.
+                1st and 2nd digits of sortOrder match the number of the module's first letter
+                 in the English alphabet: https://en.wikipedia.org/wiki/English_alphabet
+				3rd and 4th digits of sortOrder match the serial number of the module's second letter
+                 in the English alphabet.
             -->
 			<!--
 			 	2016-04-12
-			 	Нельзя использовать значение «checkout.com»,
-			 	(хотя среда разработки (валидатор XSD) об этом почему-то не предупреждает):
+			 	You can not use the value of «checkout.com»,
+				(Although the development environment (with XSD validator) does not prevent this for some reason)
 			 	Element 'group', attribute 'id': [facet 'pattern']
 			 	The value 'checkout.com' is not accepted by the pattern '[a-zA-Z0-9_]{1,}'.
 			-->
@@ -29,6 +29,8 @@
                 showInStore='1'
             >
                 <label>Checkout.com</label>
+				<dfExtension>Dfe\CheckoutCom\Ext</dfExtension>
+				<frontend_model>Df\Config\Block\System\Config\Form\Fieldset\Ext</frontend_model>
                 <field
                     id='enable'
                     translate='label'
@@ -381,7 +383,7 @@ Normally, the «Capture» transaction should be handled on a Webhook notificatio
 						-->
 						<field id='force3DS_forShippingDestinations' negative='1'>0</field>
 					</depends>
-					<comment><![CDATA[Customers from which countries can (or can not) use the method?]]></comment>
+					<comment><![CDATA[]]></comment>
 				</field>
 				<field
 					id='force3DS_forIPs'
